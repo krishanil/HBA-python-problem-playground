@@ -4,6 +4,124 @@ description : Insert the chapter description here
 attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
+
+
+--- type:NormalExercise lang:python xp:100 skills:2 key:1592680f34
+## Problem with encoding
+
+
+
+*** =instructions
+- 
+- 
+
+*** =hint
+- 
+- 
+
+*** =pre_exercise_code
+```{python}
+fn = 'https://s3.amazonaws.com/assets.datacamp.com/production/course_1342/datasets/tweets.csv'
+from urllib.request import urlretrieve
+urlretrieve(fn, 'tweets.csv')
+
+# Import pandas
+import pandas as pd
+
+# Import Twitter data as dataframe: dataframe
+tweets_df = pd.read_csv('tweets.csv')
+
+# Don't forget to print out an appropriate error message in the `except` block for cases when the function is called incorrectly.
+
+```
+
+*** =sample_code
+```{python}
+#
+result = filter(lambda x: x[0:2] == 'RT', tweets_df['text'])
+
+#
+res_list = list(result)
+
+#
+for tweet in res_list:
+    print(tweet)
+
+```
+
+*** =solution
+```{python}
+#
+result = filter(lambda x: x[0:2] == 'RT', tweets_df['text'])
+
+#
+res_list = list(result)
+
+#
+for tweet in res_list:
+    print(tweet)
+
+```
+
+*** =sct
+```{python}
+success_msg("Great work!")
+```
+
+--- type:NormalExercise lang:python xp:100 skills:2 key:1592680f34
+## No problem
+
+
+
+*** =instructions
+- 
+- 
+
+*** =hint
+- 
+- 
+
+*** =pre_exercise_code
+```{python}
+fn = 'https://s3.amazonaws.com/assets.datacamp.com/production/course_1342/datasets/tweets.csv'
+from urllib.request import urlretrieve
+urlretrieve(fn, 'tweets.csv')
+
+# Import pandas
+import pandas as pd
+
+# Import Twitter data as dataframe: dataframe
+tweets_df = pd.read_csv('tweets.csv')
+
+# Don't forget to print out an appropriate error message in the `except` block for cases when the function is called incorrectly.
+
+```
+
+*** =sample_code
+```{python}
+#
+result = filter(lambda x: x[0:2] == 'RT', tweets_df['text'])
+
+#
+res_list = list(result)
+
+#
+for tweet in res_list:
+    print(tweet)
+
+```
+
+*** =solution
+```{python}
+#
+```
+
+*** =sct
+```{python}
+success_msg("Great work!")
+```
+
+
 --- type:MultipleChoiceExercise lang:python xp:50 skills:1 key:d55bccd318
 ## A really bad movie
 
