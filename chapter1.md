@@ -9,7 +9,11 @@ attachments :
 --- type:NormalExercise lang:python xp:100 skills:2 key:1592680f34
 ## Problem with encoding
 
+For some reason, the DataCamp backend doesn't like the solution code and throws an encoding error.
 
+The weird thing is: if I remove solution code, then the same code runs fine when I submit it.
+
+See next exercise.
 
 *** =instructions
 - 
@@ -69,9 +73,11 @@ success_msg("Great work!")
 ```
 
 --- type:NormalExercise lang:python xp:100 skills:2 key:038f1b3790
-## No problem
+## No problem with encoding
 
+This is exactly the same as the previous exercise, except there is NO solution code here.
 
+The sample code runs perfectly well.
 
 *** =instructions
 - 
