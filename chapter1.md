@@ -4,7 +4,47 @@ description : Where all good Python problems come to be buried.
 attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
+--- type:NormalExercise lang:python xp:100 skills:2 key:1592680f34
+## Problem with Bokeh histograms
 
+The sample code should work and produce a histogram.
+
+
+*** =instructions
+- 
+- 
+
+*** =hint
+- 
+- 
+
+*** =pre_exercise_code
+```{python}
+
+```
+
+*** =sample_code
+```{python}
+#
+df = pd.read_csv('https://s3.amazonaws.com/assets.datacamp.com/production/course_1392/datasets/titanic.csv')
+from bokeh.charts import Histogram, output_file, show
+
+p = Histogram(df, values = 'Age', title="Age", color="Survived", legend="top_left")
+
+output_file("histogram.html")
+
+show(p)
+```
+
+*** =solution
+```{python}
+
+```
+
+*** =sct
+```{python}
+success_msg("Great work!")
+```
 
 --- type:NormalExercise lang:python xp:100 skills:2 key:1592680f34
 ## Problem with encoding
