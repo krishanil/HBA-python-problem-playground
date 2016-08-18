@@ -46,7 +46,7 @@ show(p)
 success_msg("Great work!")
 ```
 
---- type:NormalExercise lang:python xp:100 skills:2 key:1592680f34
+--- type:NormalExercise lang:python xp:100 skills:2 key:56a485ea45
 ## Problem with encoding
 
 For some reason, the DataCamp backend doesn't like the solution code and throws an encoding error.
