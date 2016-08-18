@@ -26,6 +26,7 @@ The sample code should work and produce a histogram.
 *** =sample_code
 ```{python}
 #
+import pandas as pd
 df = pd.read_csv('https://s3.amazonaws.com/assets.datacamp.com/production/course_1392/datasets/titanic.csv')
 from bokeh.charts import Histogram, output_file, show
 
