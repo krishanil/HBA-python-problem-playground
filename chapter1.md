@@ -167,3 +167,47 @@ for tweet in res_list:
 ```{python}
 success_msg("Great work!")
 ```
+
+
+--- type:NormalExercise lang:python xp:100 skills:2 key:038f1b3790
+## Testing test_function_v2
+
+Testing `test_function_v2`
+*** =instructions
+- 
+- 
+
+*** =hint
+- 
+- 
+
+*** =pre_exercise_code
+```{python}
+#PEC
+
+```
+
+*** =sample_code
+```{python}
+# This is pi
+pi = 3.14159
+
+# Round pi to 3 digits
+r_pi = round(pi, 3)
+
+```
+
+*** =solution
+```{python}
+# This is pi
+pi = 3.14159
+
+# Round pi to 3 digits
+r_pi = round(pi, 3)
+```
+
+*** =sct
+```{python}
+test_function_v2("round", params=["number", "ndigits"])
+success_msg("Great job!")
+```
