@@ -170,7 +170,7 @@ success_msg("Great work!")
 
 
 --- type:NormalExercise lang:python xp:100 skills:2 key:bf5b161a37
-## Testing test_function_v2
+## Testing test_function_v2 1
 
 Testing `test_function_v2`
 *** =instructions
@@ -209,5 +209,50 @@ r_pi = round(pi, 3)
 *** =sct
 ```{python}
 test_function_v2("round", params=["number", "ndigits"])
+success_msg("Great job!")
+```
+
+--- type:NormalExercise lang:python xp:100 skills:2 key:bf5b161a37
+## Testing test_function_v2 2
+
+Testing `test_function_v2`
+*** =instructions
+- 
+- 
+
+*** =hint
+- 
+- 
+
+*** =pre_exercise_code
+```{python}
+#PEC
+fn = 'https://s3.amazonaws.com/assets.datacamp.com/production/course_998/datasets/moby_opens.txt'
+from urllib.request import urlretrieve
+urlretrieve(fn, 'moby_dick.txt')
+```
+
+*** =sample_code
+```{python}
+# Open a file: file
+file = open('moby_dick.txt', mode='r')
+
+# Print it
+print(file.read())
+```
+
+*** =solution
+```{python}
+# Open a file: file
+file = open('moby_dick.txt', mode='r')
+
+# Print it
+print(file.read())
+```
+
+*** =sct
+```{python}
+predef_msg = "You don't have to change any of the predefined code."
+test_function_v2("open", do_eval=False, not_called_msg=predef_msg, params=["name", "mode"])
 success_msg("Great job!")
 ```
