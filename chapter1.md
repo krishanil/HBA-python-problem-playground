@@ -169,7 +169,7 @@ success_msg("Great work!")
 ```
 
 
---- type:NormalExercise lang:python xp:100 skills:2 key:038f1b3790
+--- type:NormalExercise lang:python xp:100 skills:2 key:bf5b161a37
 ## Testing test_function_v2
 
 Testing `test_function_v2`
