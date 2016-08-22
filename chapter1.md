@@ -212,7 +212,7 @@ test_function_v2("round", params=["number", "ndigits"])
 success_msg("Great job!")
 ```
 
---- type:NormalExercise lang:python xp:100 skills:2 key:bf5b161a37
+--- type:NormalExercise lang:python xp:100 skills:2 key:c58a963dcd
 ## Testing test_function_v2 2
 
 Testing `test_function_v2`
