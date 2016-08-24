@@ -256,3 +256,46 @@ predef_msg = "You don't have to change any of the predefined code."
 test_function_v2("open", do_eval=False, not_called_msg=predef_msg, params=["file", "mode"])
 success_msg("Great job!")
 ```
+
+--- type:NormalExercise lang:python xp:100 skills:2 key:c58a963dcd
+## Testing test_function_v2 3
+
+Testing `test_function_v2`
+*** =instructions
+- 
+- 
+
+*** =hint
+- 
+- 
+
+*** =pre_exercise_code
+```{python}
+#PEC
+fn = 'https://s3.amazonaws.com/assets.datacamp.com/production/course_998/datasets/moby_opens.txt'
+from urllib.request import urlretrieve
+urlretrieve(fn, 'moby_dick.txt')
+```
+
+*** =sample_code
+```{python}
+x = 'waddup'
+
+# Print it
+print(x)
+```
+
+*** =solution
+```{python}
+x = 'waddup'
+
+# Print it
+print(x)
+```
+
+*** =sct
+```{python}
+predef_msg = "You don't have to change any of the predefined code."
+test_function_v2("print", do_eval=False, not_called_msg=predef_msg, params=["value"])
+success_msg("Great job!")
+```
