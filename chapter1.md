@@ -257,7 +257,7 @@ test_function_v2("open", do_eval=False, not_called_msg=predef_msg, params=["file
 success_msg("Great job!")
 ```
 
---- type:NormalExercise lang:python xp:100 skills:2 key:c58a963dcd
+--- type:NormalExercise lang:python xp:100 skills:2 key:dcbbb057c4
 ## Testing test_function_v2 3
 
 Testing `test_function_v2`
