@@ -253,6 +253,6 @@ print(file.read())
 *** =sct
 ```{python}
 predef_msg = "You don't have to change any of the predefined code."
-test_function_v2("open", do_eval=False, not_called_msg=predef_msg, params=["name", "mode"])
+test_function_v2("open", do_eval=False, not_called_msg=predef_msg, params=["file", "mode"])
 success_msg("Great job!")
 ```
