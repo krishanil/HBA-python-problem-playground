@@ -258,6 +258,97 @@ success_msg("Great job!")
 ```
 
 --- type:NormalExercise lang:python xp:100 skills:2 key:dcbbb057c4
+## Testing test_correct
+
+Testing `test_correct`
+*** =instructions
+- 
+- 
+
+*** =hint
+- 
+- 
+
+*** =pre_exercise_code
+```{python}
+#PEC
+from urllib.request import urlretrieve
+fn1 = 'https://s3.amazonaws.com/assets.datacamp.com/production/course_998/datasets/Chinook.sqlite'
+urlretrieve(fn1, 'Chinook.sqlite')
+```
+
+*** =sample_code
+```{python}
+# Import packages
+from sqlalchemy import create_engine
+import pandas as pd
+
+# Create engine: engine
+engine = create_engine('sqlite:///Chinook.sqlite')
+
+# Open engine connection
+con = engine.connect()
+
+# Perform query: rs
+rs = con.execute("SELECT * FROM Album")
+
+# Save results of the query to DataFrame: df
+df = pd.DataFrame(rs.fetchall())
+
+# Close connection
+con.close()
+
+# Print head of DataFrame df
+print(df.head())
+
+```
+
+*** =solution
+```{python}
+# Import packages
+from sqlalchemy import create_engine
+import pandas as pd
+
+# Create engine: engine
+engine = create_engine('sqlite:///Chinook.sqlite')
+
+# Open engine connection
+con = engine.connect()
+
+# Perform query: rs
+rs = con.execute("SELECT * FROM Album")
+
+# Save results of the query to DataFrame: df
+df = pd.DataFrame(rs.fetchall())
+
+# Close connection
+con.close()
+
+# Print head of DataFrame df
+print(df.head())
+
+```
+
+*** =sct
+```{python}
+
+# Test: Predefined code
+predef_msg = "You don't have to change any of the predefined code."
+
+def df_test():
+    test_function("con.execute")
+    test_function("rs.fetchall")
+    test_object("df")
+    
+    #test_function("pandas.DataFrame")
+    
+
+test_or(df_test(), lambda: test_object("df"))
+
+success_msg("Good job!")
+```
+
+--- type:NormalExercise lang:python xp:100 skills:2 key:dcbbb057c4
 ## Testing test_function_v2 3
 
 Testing `test_function_v2`
