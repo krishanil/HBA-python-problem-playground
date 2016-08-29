@@ -343,7 +343,7 @@ def df_test():
     #test_function("pandas.DataFrame")
     
 
-test_correct(lambda: test_object("df"), df_test())
+test_correct(lambda: test_object("df"), lambda: df_test())
 
 success_msg("Good job!")
 ```
