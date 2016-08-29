@@ -348,7 +348,7 @@ test_or(df_test(), lambda: test_object("df"))
 success_msg("Good job!")
 ```
 
---- type:NormalExercise lang:python xp:100 skills:2 key:dcbbb057c4
+--- type:NormalExercise lang:python xp:100 skills:2 key:b62fd865c9
 ## Testing test_function_v2 3
 
 Testing `test_function_v2`
