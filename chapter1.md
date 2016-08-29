@@ -338,12 +338,12 @@ predef_msg = "You don't have to change any of the predefined code."
 def df_test():
     test_function("con.execute")
     test_function("rs.fetchall")
-    #test_object("df")
+    test_object("df")
     
     #test_function("pandas.DataFrame")
     
 
-test_correct(lambda: test_object('df'), df_test())
+test_or(lambda: test_object('df'), df_test())
 
 success_msg("Good job!")
 ```
