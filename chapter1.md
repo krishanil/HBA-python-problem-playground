@@ -477,7 +477,7 @@ def df_test():
     test_object("df")
     
 
-test_or(lambda: test_object("df"), df_test)
+test_or(df_test, lambda: test_object("df"))
 
 success_msg("Good job!")
 ```
