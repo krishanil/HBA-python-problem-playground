@@ -713,10 +713,10 @@ def test_with_body():
     #test_function("con.execute")
     #test_function("rs.fetchmany")
     def inner_test():
-        test_function("con.execute")
         test_function("rs.fetchmany")
-        #test_expression_result(expr_code="df.columns")
         test_function("rs.keys")
+        test_function("con.execute")
+        
 
     # Test: call to pd.DataFrame() and 'df' variable
     test_correct(lambda: test_object('df'),
