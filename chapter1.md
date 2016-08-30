@@ -470,7 +470,7 @@ print(df.head())
 # Test: Predefined code
 predef_msg = "You don't have to change any of the predefined code."
 
-test_object('df')
+test_object("df")
 
 <!-- def df_test():
     test_function("con.execute")
