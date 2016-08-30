@@ -563,7 +563,7 @@ test_object("df")
 success_msg("Good job!")
 ```
 
---- type:NormalExercise lang:python xp:100 skills:2 key:b0410adc71
+--- type:NormalExercise lang:python xp:100 skills:2 key:beda3ff71a
 ## Testing test_object w/ df
 
 Testing `test_object`
