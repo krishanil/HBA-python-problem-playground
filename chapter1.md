@@ -385,7 +385,7 @@ def df_diag():
     test_function("rs.fetchall")
     
 
-test_correct(lambda: test_object('df'), df_diag())
+test_correct(lambda: test_object('df'), df_diag)
 
 success_msg("Good job!")
 ```
