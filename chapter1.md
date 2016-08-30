@@ -563,3 +563,174 @@ test_object("df")
 success_msg("Good job!")
 ```
 
+--- type:NormalExercise lang:python xp:100 skills:2 key:b0410adc71
+## Testing test_object w/ df
+
+Testing `test_object`
+*** =instructions
+- 
+- 
+
+*** =hint
+- 
+- 
+
+*** =pre_exercise_code
+```{python}
+#PEC
+from urllib.request import urlretrieve
+fn1 = 'https://s3.amazonaws.com/assets.datacamp.com/production/course_998/datasets/Chinook.sqlite'
+urlretrieve(fn1, 'Chinook.sqlite')
+```
+
+*** =sample_code
+```{python}
+# Import packages
+from sqlalchemy import create_engine
+import pandas as pd
+
+# Create engine: engine
+engine = create_engine('sqlite:///Chinook.sqlite')
+
+# Open engine connection
+con = engine.connect()
+
+# Perform query: rs
+rs = con.execute("SELECT * FROM Album")
+
+# Save results of the query to DataFrame: df
+df = pd.DataFrame(rs.fetchall())
+
+# Close connection
+con.close()
+
+# Print head of DataFrame df
+print(df.head())
+
+```
+
+*** =solution
+```{python}
+# Import packages
+from sqlalchemy import create_engine
+import pandas as pd
+
+# Create engine: engine
+engine = create_engine('sqlite:///Chinook.sqlite')
+
+# Open engine connection
+con = engine.connect()
+
+# Perform query: rs
+rs = con.execute("SELECT * FROM Album")
+
+# Save results of the query to DataFrame: df
+df = pd.DataFrame(rs.fetchall())
+
+# Close connection
+con.close()
+
+# Print head of DataFrame df
+print(df.head())
+
+```
+
+*** =sct
+```{python}
+
+# Test: Predefined code
+predef_msg = "You don't have to change any of the predefined code."
+
+test_object("df")
+
+success_msg("Good job!")
+```
+
+--- type:NormalExercise lang:python xp:100 skills:2 ,8 key:ad4428428a
+## Testing test_correct within a context manager
+
+Testing `test_correct` within a context manager
+
+*** =instructions
+- help! :-D
+
+*** =hint
+- blah
+
+*** =pre_exercise_code
+```{python}
+from urllib.request import urlretrieve
+fn1 = 'https://s3.amazonaws.com/assets.datacamp.com/production/course_998/datasets/Chinook.sqlite'
+urlretrieve(fn1, 'Chinook.sqlite')
+#
+from sqlalchemy import create_engine
+import pandas as pd
+#
+engine = create_engine('sqlite:///Chinook.sqlite')
+```
+
+*** =sample_code
+```{python}
+# Open engine in context manager
+# Perform query and save results to DataFrame: df
+with engine.connect() as con:
+    rs = con.execute("SELECT LastName, Title FROM Employee")
+    df = pd.DataFrame(rs.fetchmany(size=3))
+    df.columns = rs.keys()
+
+# Print the length of the DataFrame df
+print(len(df))
+
+# Print the head of the DataFrame df
+print(df.head())
+
+```
+
+*** =solution
+```{python}
+# Open engine in context manager
+# Perform query and save results to DataFrame: df
+with engine.connect() as con:
+    rs = con.execute("SELECT LastName, Title FROM Employee")
+    df = pd.DataFrame(rs.fetchmany(size=3))
+    df.columns = rs.keys()
+
+# Print the length of the DataFrame df
+print(len(df))
+
+# Print the head of the DataFrame df
+print(df.head())
+
+```
+
+*** =sct
+```{python}
+# Tests for the context manager body
+def test_with_body():
+
+    # Test: call to con.execute() and 'rs' variable
+    test_object("rs", do_eval=False)
+    #test_function("con.execute")
+    #test_function("rs.fetchmany")
+    def inner_test():
+        test_function("con.execute")
+        test_function("rs.fetchmany")
+        #test_expression_result(expr_code="df.columns")
+        test_function("rs.keys")
+
+    # Test: call to pd.DataFrame() and 'df' variable
+    test_correct(lambda: test_object('df'),
+             lambda: inner_test())
+
+# Test: Context manager
+test_with(
+    1,
+    context_vals=True,
+    context_tests=lambda: test_function("engine.connect"),
+    body=test_with_body
+)
+
+
+
+success_msg("Awesome!")
+```
