@@ -387,7 +387,7 @@ def df_diag():
     #test_function("pandas.DataFrame")
     
 
-test_correct(lambda: test_object('df'), df_diag())
+test_correct(lambda: test_object('df'), lambda: df_diag())
 
 success_msg("Good job!")
 ```
@@ -478,7 +478,7 @@ def df_test():
     test_object("df")
     
 
-test_or(test_object('df'), df_test())
+test_or(lambda: test_object('df'), lamda: df_test())
 
 success_msg("Good job!")
 ```
