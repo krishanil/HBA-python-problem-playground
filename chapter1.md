@@ -480,7 +480,7 @@ test_or(lambda: test_object("df"), df_test())
 success_msg("Good job!")
 ```
 
---- type:NormalExercise lang:python xp:100 skills:2 key:b0410adc71
+--- type:NormalExercise lang:python xp:100 skills:2 key:05c5b9aeb7
 ## Testing test_object w/ df
 
 Testing `test_object`
