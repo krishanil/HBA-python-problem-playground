@@ -381,8 +381,10 @@ print(df.head())
 predef_msg = "You don't have to change any of the predefined code."
 
 def df_diag():
-    test_function("con.execute")
     test_function("rs.fetchall")
+    test_function("pandas.DataFrame")
+    test_function("con.execute")
+    
     
 
 test_correct(lambda: test_object('df'), df_diag)
