@@ -394,7 +394,7 @@ success_msg("Good job!")
 
 
 
---- type:NormalExercise lang:python xp:100 skills:2 key:dcbbb057c4
+--- type:NormalExercise lang:python xp:100 skills:2 key:b0410adc71
 ## Testing test_or
 
 Testing `test_or`
