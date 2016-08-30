@@ -472,12 +472,12 @@ print(df.head())
 
 
 def df_test():
-    test_function("con.execute")
     test_function("rs.fetchall")
+    test_function("con.execute")
     test_object("df")
     
 
-test_or(lambda: test_object("df"), df_test())
+test_or(lambda: test_object("df"), df_test)
 
 success_msg("Good job!")
 ```
