@@ -736,3 +736,142 @@ test_with(
 
 success_msg("Awesome!")
 ```
+
+--- type:NormalExercise lang:python xp:100 skills:2 key:ed693c5d52
+## Bringing it all together (1)
+
+You've got your first taste of writing your own functions in the previous exercises. You've learned how to add parameters to your own function definitions, return a value or multiple values with tuples, and how to call the functions you've defined.
+
+In this and the following exercise, you will bring together all these concepts and apply them to a simple data science problem. You will load a dataset and develop functionalities to extract simple insights from the data. 
+
+For this exercise, your goal is to recall how to load a dataset into a dataframe. The dataset contains Twitter data and you will iterate over entries in a column to build a dictionary with keys the names of languages and values the number of tweets in the given language. The file `tweets.csv` is available in your current directory.
+
+*** =instructions
+- Import the pandas package with the alias `pd`.
+- Import the file `'tweets.csv'` using the pandas function `read_csv()`. Assign the resulting dataframe to `df`.
+- Complete the `for` loop by iterating over the `'lang'` column in the dataframe `df`.
+- Complete the bodies of the `if-else` statements in the `for` loop: **if** the key is in `langs_count`, add `1` to its current value, **else** add the key to `langs_count` and set its value to `1`. Use the loop variable `entry` in your code.
+
+
+*** =hint
+- To import a package `x` with the alias `y`, do: `import x as y`.
+- To import the file, pass the filename `'tweets.csv'` to `read_csv()`. Remember that `read_csv()` is a pandas function.
+- To access a column `'a'` in a dataframe `b`, do: `b['a']`.
+- To _update_ the value of a key `entry` in a dictionary `d`, do: `d[entry] = ` _operation_. Use a similar syntax when adding a new key to the dictionary and setting its value.
+
+*** =pre_exercise_code
+```{python}
+fn = 'https://s3.amazonaws.com/assets.datacamp.com/production/course_1342/datasets/tweets.csv'
+from urllib.request import urlretrieve
+urlretrieve(fn, 'tweets.csv')
+
+```
+
+*** =sample_code
+```{python}
+# Import pandas
+
+
+# Import Twitter data as dataframe: df
+df = ____
+
+# Initialize an empty dictionary: langs_count
+langs_count = {}
+
+# ...
+col = df['lang']
+
+# Iterate over lang column in df
+for entry in ____:
+
+    # If the language is in langs_count, add 1
+    if entry in langs_count.keys():
+        ____
+    # Else add the language to langs_count, set the value to 1
+    else:
+        ____
+
+# Print the populated dictionary
+print(langs_count)
+
+```
+
+*** =solution
+```{python}
+# Import pandas
+import pandas as pd
+
+# Import Twitter data as dataframe: df
+df = pd.read_csv('tweets.csv')
+
+# Initialize an empty dictionary: langs_count
+langs_count = {}
+
+# ...
+col = df['lang']
+
+# Iterate over lang column in dataframe
+for entry in col:
+
+    # If the language is in langs_count, add 1
+    if entry in langs_count.keys():
+        langs_count[entry] += 1
+    # Else add the language to langs_count, set the value to 1
+    else:
+        langs_count[entry] = 1
+
+# Print the populated dictionary
+print(langs_count)
+
+```
+
+*** =sct
+```{python}
+# All functions used here are defined in the pythonwhat Python package.
+# Documentation can also be found at github.com/datacamp/pythonwhat/wiki
+
+predef_msg = "You don't have to change any of the predefined code."
+
+# Test: import of pandas package
+test_import("pandas")
+
+# Test: pd.read_csv() call
+test_function("pandas.read_csv")
+
+# Test: df object
+test_object("df")
+
+
+# Test: for loop iterable
+def test_for_iter():
+    test_object("col")
+
+
+
+def test_for_body():
+    test_student_typed("langs_count[entry] += 1", not_typed_msg="Did you add 1 to the current value of the key in the `if` statement?",
+    pattern=False)
+    test_student_typed("langs_count[entry] = 1", not_typed_msg="Did you initialize the value of the key in the `else` statement?",
+    pattern = False)
+
+# Test: for loop
+test_for_loop(
+    index=1,
+    for_iter=test_for_iter,
+    body=test_for_body
+)
+
+
+# Test: langs_count object
+test_object("langs_count")
+
+# Test: print() call
+test_function(
+    "print",
+    not_called_msg=predef_msg,
+    incorrect_msg=predef_msg
+)
+
+success_msg("Great work!")
+
+```
