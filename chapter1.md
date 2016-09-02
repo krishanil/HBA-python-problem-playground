@@ -1020,3 +1020,95 @@ test_function(
 success_msg("Great work!")
 
 ```
+--- type:NormalExercise lang:python xp:100 skills:2 key:2a23c21a24
+## Nested Functions II
+
+Great job, you've just nested a function within another function. One other pretty cool reason for nesting functions is the idea of a **closure**. This means that the nested or inner function remembers the state of its enclosing scope when called. Thus, anything defined locally in the enclosing scope is available to the inner function even when the outer function has finished execution.
+
+Let's move forward then! In this exercise, you will complete the definition of the inner function `inner_echo()` and then call `echo()` a couple of times, each with a different argument. Complete the exercise and see what the output will be!
+
+*** =instructions
+- Complete the function header of `inner_echo()` with a single parameter `word1`.
+- Return `inner_echo` from inside `echo()`.
+- Call `echo()`, passing 2 as an argument. Assign the resulting function to `twice`.
+- Call `echo()`, passing 3 as an argument. Assign the resulting function to `thrice`.
+
+*** =hint
+- A nested function is defined the same way you would define a regular function: `def` _function name_`(`_parameters_`):`.
+- Make sure to return the function `inner_echo` without the parentheses `()` from _inside_ the `echo()` function.
+- Make sure to assign the call to `echo()` to the object `twice`. Pass 2 as an argument to `echo()`.
+- The second call to `echo()` follows the same format as the previous `echo()` call, but with 3 as an argument. Don't forget to assign the result to the object `thrice`.
+
+*** =pre_exercise_code
+```{python}
+# pec
+
+```
+
+*** =sample_code
+```{python}
+# Define echo
+def echo(n):
+    """Return the inner_echo function."""
+
+    # Define inner_echo
+    def ____(____):
+        """Concatenate n copies of word1."""
+        echo_word = word1 * n
+        return echo_word
+
+    # Return inner_echo
+    
+
+# Call echo: twice
+
+
+# Call echo: thrice
+
+
+# Call twice() and thrice() then print
+print(twice('hello'), thrice('hello'))
+
+```
+
+*** =solution
+```{python}
+# Define echo
+def echo(n):
+    """Return the inner_echo function."""
+
+    # Define inner_echo
+    def inner_echo(word1):
+        """Concatenate n copies of word1."""
+        echo_word = word1 * n
+        return echo_word
+
+    # Return inner_echo
+    return inner_echo
+
+# Call echo: twice
+twice = echo(2)
+
+# Call echo: thrice
+thrice = echo(3)
+
+# Call twice() and thrice() then print
+print(twice('hello'), thrice('hello'))
+
+```
+
+*** =sct
+```{python}
+# All functions used here are defined in the pythonwhat Python package.
+# Documentation can also be found at github.com/datacamp/pythonwhat/wiki
+
+def inner_test():
+    test_function_definition("inner_echo")
+
+# Test: echo() definition
+test_function_definition("echo", body=lambda: test_object("echo_word"))
+
+
+success_msg("Great work!")
+
+```
