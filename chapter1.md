@@ -892,13 +892,13 @@ Is `test_student_typed()` working?
 
 *** =sample_code
 ```{python}
-x = sum(range(10))
+print('globalteam')
 
 ```
 
 *** =solution
 ```{python}
-x = sum(range(10))
+print('global team')
 
 ```
 
@@ -908,7 +908,8 @@ x = sum(range(10))
 # Documentation can also be found at github.com/datacamp/pythonwhat/wiki
 
 
-test_student_typed("sum", pattern=False, not_typed_msg="Did you use `sum`?")
+test_student_typed("global\s+team", pattern=True, 
+    not_typed_msg="Did you use the keyword `global` to change the value of the global variable `team`?")
 
 success_msg("Great work!")
 
