@@ -1076,7 +1076,7 @@ print(twice('hello'), thrice('hello'))
 # Define echo
 def echo(n):
     """Return the inner_echo function."""
-
+    echo_word = word1 * n
     # Define inner_echo
     def inner_echo(word1):
         """Concatenate n copies of word1."""
