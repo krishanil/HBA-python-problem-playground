@@ -914,3 +914,107 @@ test_student_typed("global\s+team", pattern=True,
 success_msg("Great work!")
 
 ```
+
+--- type:NormalExercise lang:python xp:100 skills:2 key:d442dfd8ee
+## Nested Functions I
+
+You've learned in the last video about nesting functions within functions. A couple reasons why you'd like to do this is to _encapsulate_ certain mechanisms within functions and to avoid writing out the same computations within functions repeatedly (_DRY_!). There's nothing new about defining nested functions: you simply define it as you would a regular function with `def` and embed it inside another function!
+
+In this exercise, inside a function `three_shouts()`, you will define a nested function `inner()` that concatenates a string object with `!!!`. `three_shouts()` then returns a tuple of three elements, each a string concatenated with `!!!` using `inner()`. Go for it!
+
+*** =instructions
+- Complete the function header of `inner()` with a single parameter `word`.
+- Complete the return value: each element of the tuple should be a call to `inner()`, passing in the parameters from `three_shouts()` as arguments to each call.
+
+*** =hint
+- A nested function is defined the same way you would define a regular function: `def` _function name_`(`_parameters_`):`.
+- Each element of the tuple return value is a call to `inner()`. Do three `inner()` calls, passing in `word1`, `word2`, and `word3`.
+
+*** =pre_exercise_code
+```{python}
+# pec
+```
+
+*** =sample_code
+```{python}
+# Define three_shouts
+def three_shouts(word1, word2, word3):
+    """Returns a tuple of strings
+    concatenated with '!!!'."""
+
+    # Define inner
+    def ____(____):
+        """Returns a string concatenated with '!!!'."""
+        return word + '!!!'
+
+    # Return a tuple of strings
+    return (____, ____, ____)
+
+# Call three_shouts() and print
+print(three_shouts('a', 'b', 'c'))
+
+```
+
+*** =solution
+```{python}
+# Define three_shouts
+def three_shouts(word1, word2, word3):
+    """Returns a tuple of strings
+    concatenated with '!!!'."""
+
+    # Define inner
+    def inner(word):
+        """Returns a string concatenated with '!!!'."""
+        return word + '!!!'
+
+    # Return a tuple of strings
+    return (inner(word1), inner(word2), inner(word3))
+
+# Call three_shouts() and print
+print(three_shouts('a', 'b', 'c'))
+
+```
+
+*** =sct
+```{python}
+# All functions used here are defined in the pythonwhat Python package.
+# Documentation can also be found at github.com/datacamp/pythonwhat/wiki
+
+test_student_typed("return\s+word\s+\+\s+\'!!!\'", pattern=True, 
+    not_typed_msg="Did you return `word + '!!!'` in the inner function?")
+
+def inner_test():
+    test_function_definition("inner")
+    #test_function_definition("inner", lambda: test_student_typed("rreturn\s+word\s+\+\s+\'!!!\'", pattern=True, 
+    #not_typed_msg="Did you return `word + '!!!'` in the inner function?"))
+    #test_function_definition("inner", results=["Hi"])
+
+
+# Test: three_shouts() definition
+test_function_definition("three_shouts", body=inner_test)
+
+# TO-DO
+# Test: inner() definition IN three_shouts()
+
+# TO-DO
+# Test: 3 inner() calls
+
+# Test: three_shouts() call
+test_function_v2(
+    "three_shouts",
+    do_eval=None,
+    not_called_msg="You don't have to change any of the predefined code1.",
+    incorrect_msg="You don't have to change any of the predefined code1."
+)
+
+# Test: print() call
+test_function(
+    "print",
+    do_eval=False,
+    not_called_msg="You don't have to change any of the predefined code2.",
+    incorrect_msg="You don't have to change any of the predefined code2."
+)
+
+success_msg("Great work!")
+
+```
