@@ -1178,7 +1178,7 @@ echo_shout('hello')
 test_student_typed("nonlocal\s+echo_word", not_typed_msg="Did you use the `nonlocal` keyword to change `echo_word` in the inner function `shuout`?")
 
 def inner_test():
-    #test_object_after_expression("echo_word", context_vals=["hello"])
+    test_object_after_expression("echo_word", context_vals=["hello"])
     test_function_definition("shout")
     test_function("shout")
     test_function("print", args=[], index=1)
