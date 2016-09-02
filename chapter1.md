@@ -1076,8 +1076,7 @@ print(twice('hello'), thrice('hello'))
 # Define echo
 def echo(n):
     """Return the inner_echo function."""
-    word1 = 'hi'
-    echo_word = word1 * n
+
     # Define inner_echo
     def inner_echo(word1):
         """Concatenate n copies of word1."""
@@ -1104,11 +1103,10 @@ print(twice('hello'), thrice('hello'))
 # Documentation can also be found at github.com/datacamp/pythonwhat/wiki
 
 def inner_test():
-    test_function_definition("inner_echo")
+    test_function_definition("inner_echo", body=lambda: test_object_after_expression("echo_word", context_vals = ['anything']))
 
 # Test: echo() definition
-test_function_definition("echo", body=lambda: test_object("echo_word"))
-
+test_function_definition("echo", body=inner_test)
 
 success_msg("Great work!")
 
