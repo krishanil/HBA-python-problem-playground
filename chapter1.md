@@ -1111,3 +1111,81 @@ test_function_definition("echo", body=inner_test)
 success_msg("Great work!")
 
 ```
+
+--- type:NormalExercise lang:python xp:100 skills:2 key:a14c11f75a
+## Nested Functions and the keyword nonlocal
+
+`nonlocal`
+
+*** =instructions
+- ok
+- ok1
+
+*** =hint
+- Hint, here.
+- And here.
+
+*** =pre_exercise_code
+```{python}
+# pec
+
+```
+
+*** =sample_code
+```{python}
+def echo_shout(word):
+    """Change the value of the nonlocal variable echo_word"""
+    
+    echo_word = word*2
+    print(echo_word)
+    
+    def shout():
+        nonlocal echo_word
+        echo_word = echo_word + '!!!'
+    
+    shout()
+    print(echo_word)
+    
+echo_shout('hello')
+```
+
+*** =solution
+```{python}
+def echo_shout(word):
+    """Change the value of the nonlocal variable echo_word"""
+    
+    echo_word = word*2
+
+    print(echo_word)
+
+    def shout():
+        nonlocal echo_word
+        echo_word = echo_word + '!!!'
+    
+    shout()
+
+    print(echo_word)
+    
+echo_shout('hello')
+
+```
+
+*** =sct
+```{python}
+# All functions used here are defined in the pythonwhat Python package.
+# Documentation can also be found at github.com/datacamp/pythonwhat/wiki
+
+test_student_typed("nonlocal\s+echo_word", not_typed_msg="Did you use the `nonlocal` keyword to change `echo_word` in the inner function `shuout`?")
+
+def inner_test():
+    #test_object_after_expression("echo_word", context_vals=["hello"])
+    test_function_definition("shout")
+    test_function("shout")
+    test_function("print", args=[], index=1)
+    test_function("print", args=[], index=2)
+
+test_function_definition("echo_shout", body=inner_test)
+
+test_function("echo_shout")
+
+```
