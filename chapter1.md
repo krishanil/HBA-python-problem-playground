@@ -987,7 +987,7 @@ def inner_test():
     test_function_definition("inner")
     #test_function_definition("inner", lambda: test_student_typed("rreturn\s+word\s+\+\s+\'!!!\'", pattern=True, 
     #not_typed_msg="Did you return `word + '!!!'` in the inner function?"))
-    #test_function_definition("inner", results=["Hi"])
+    #test_function_definition("inner", results=[("Hi")])
 
 
 # Test: three_shouts() definition
