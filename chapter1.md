@@ -875,3 +875,41 @@ test_function(
 success_msg("Great work!")
 
 ```
+--- type:NormalExercise lang:python xp:100 skills:2 key:f8d6f897de
+## Test_student_typed
+
+Is `test_student_typed()` working?
+*** =instructions
+- ?
+
+*** =hint
+- ?
+
+*** =pre_exercise_code
+```{python}
+# pec
+```
+
+*** =sample_code
+```{python}
+x = sum(range(10))
+
+```
+
+*** =solution
+```{python}
+x = sum(range(10))
+
+```
+
+*** =sct
+```{python}
+# All functions used here are defined in the pythonwhat Python package.
+# Documentation can also be found at github.com/datacamp/pythonwhat/wiki
+
+
+test_student_typed("sum", pattern=False, not_typed_msg="Did you use `sum`?")
+
+success_msg("Great work!")
+
+```
