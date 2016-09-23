@@ -1189,3 +1189,72 @@ test_function_definition("echo_shout", body=inner_test)
 test_function("echo_shout")
 
 ```
+--- type:NormalExercise lang:python xp:100 skills:2 key:1da0d511f7
+## Axis labels!
+In the last exercise, you made a nice histogram of petal lengths of *I. versicolor*, but **you didn't label the axes!** That's ok; it's not your fault since we didn't ask you to. No, add axis labels to the plot using `plt.xlabel()` and `plt.ylabel()`. Don't forget to add units.
+
+*** =instructions
+- Label the axes. Don't forget that you should always include units in your axis labels. Your $y$-axis label is just `'count'`.
+- Redraw the plot constructed in the above steps using `plt.draw()`.
+
+*** =hint
+hint comes here
+
+*** =pre_exercise_code
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set()
+
+# Make DataFrame of iris data
+import sklearn.datasets
+data = sklearn.datasets.load_iris()
+df = pd.DataFrame(data.data, columns=data.feature_names)
+df['species'] = data.target
+df = df.rename(columns={'petal length (cm)': 'petal_length'})
+for i in [0, 1, 2]:
+    df.loc[df['species']==i, 'species'] = data.target_names[i]
+
+df = df[['species', 'petal_length']]
+
+# Extract Series that has versicolor petal lengths
+versicolor_petal_length = df.loc[df.species=='versicolor',
+                                 'petal_length'].values
+
+# Plot histogram of versicolor petal lengths
+_ = plt.hist(versicolor_petal_length)
+
+# Show histogram
+plt.show()
+```
+
+*** =sample_code
+```{python}
+# Label axes
+_ = plt.xlabel('petal length (cm)')
+_ = plt.ylabel('count')
+
+# Show histogram
+plt.draw()
+```
+
+*** =solution
+```{python}
+# Label axes
+_ = plt.xlabel('petal length (cm)')
+_ = plt.ylabel('count')
+
+# Show histogram
+plt.draw()
+```
+
+*** =sct
+```{python}
+test_function("matplotlib.pyplot.xlabel")
+test_function("matplotlib.pyplot.ylabel", not_called_msg="Did you label the y axis using `plt.ylabel`?", incorrect_msg="Did you pass the correct argument to `plt.ylabel`?")
+
+test_function("matplotlib.pyplot.draw")
+
+success_msg("Great work!")
+```
