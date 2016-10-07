@@ -1258,3 +1258,121 @@ test_function("matplotlib.pyplot.draw")
 
 success_msg("Great work!")
 ```
+--- type:NormalExercise lang:python xp:100 skills:2 key:3844efa7ed
+## If you have a story, you can simulate it!
+Sometimes, the story describing our probability distribution does not have a named distribution to go along with it. In these cases, fear not! You can always simulate it. We'll do that in this and the next exercise.
+
+In earlier exercises, we looked at the rare event of no-hitters in Major League Baseball. *Hitting the cycle* is another rare baseball event. When a batter hits the cycle, he gets all four kinds of hits, a single, double, triple, and home run, in a single game. Like no-hitters, this can be modeled as a Poisson process, so the time between hits of the cycle are also Exponentially distributed.
+
+How long must we wait to see both a no-hitter *and* a batter hit the cycle? The idea is that we have to wait some time for the no-hitter, and then after the no-hitter, we have to wait for hitting the cycle. Stated another way, what is the total waiting time for the arrival of two different Poisson processes? The total waiting time is the time waited for the no-hitter, plus the time waited for the hitting the cycle.
+
+Now, you will write a function to sample out of the distribution described by this story.
+
+*** =instructions
+- Define a function with call signature `successive_poisson(tau1, tau2, size=1)` that samples the waiting time for a no-hitter and a hit of the cycle.
+    * Draw waiting times for the no-hitter out of an exponential distribution. Draw `size` samples.
+    * Draw waiting times for hitting the cycle out of an exponential distribution. Draw `size` samples.
+    * Return the sum of the waiting times for the two events.
+
+*** =hint
+hint comes here
+
+*** =pre_exercise_code
+```{python}
+import numpy as np
+
+np.random.seed(42)
+```
+
+*** =sample_code
+```{python}
+def successive_poisson(tau1, tau2, size=1):
+    # Draw samples out of first exponential distribution
+    t1 = np.random.exponential(tau1, size=size)
+
+    # Draw samples out of first exponential distribution
+    t2 = np.random.exponential(tau2, size=size)
+
+    return t1 + t2
+```
+
+*** =solution
+```{python}
+def successive_poisson(tau1, tau2, size=1):
+    # Draw samples out of first exponential distribution
+    t1 = np.random.exponential(tau1, size=size)
+
+    # Draw samples out of first exponential distribution
+    t2 = np.random.exponential(tau2, size=size)
+
+    return t1 + t2
+
+```
+
+*** =sct
+```{python}
+
+def inner_test():
+    import numpy as np
+    #test_function("numpy.random.exponential", index= 1, do_eval=False)
+    #test_function("numpy.random.exponential", index= 2, do_eval=False)
+    test_object_after_expression(
+        "t1",
+        context_vals=[2,3,1],
+        undefined_msg="have you defined `t1`?",
+        incorrect_msg="are you sure you assigned the correct value to `t1`?")
+    
+
+
+#TO DO: `results` arg!
+import numpy as np
+# Test: shout_all() definition
+test_function_definition("successive_poisson", body=inner_test, #results=[[np.random.rand(5)]],
+    wrong_result_msg="Are you returning the correct values in `successive_poisson`?"
+)
+
+success_msg("Great work! We'll put the function to use in the next exercise.")
+```
+
+--- type:NormalExercise lang:python xp:100 skills:2 key:6906460ed1
+## NumPy random SCT test 
+Sometimes, the story describing our probability distribution does not have a named distribution to go along with it. In these cases, fear not! You can always simulate it. We'll do that in this and the next exercise.
+
+In earlier exercises, we looked at the rare event of no-hitters in Major League Baseball. *Hitting the cycle* is another rare baseball event. When a batter hits the cycle, he gets all four kinds of hits, a single, double, triple, and home run, in a single game. Like no-hitters, this can be modeled as a Poisson process, so the time between hits of the cycle are also Exponentially distributed.
+
+How long must we wait to see both a no-hitter *and* a batter hit the cycle? The idea is that we have to wait some time for the no-hitter, and then after the no-hitter, we have to wait for hitting the cycle. Stated another way, what is the total waiting time for the arrival of two different Poisson processes? The total waiting time is the time waited for the no-hitter, plus the time waited for the hitting the cycle.
+
+Now, you will write a function to sample out of the distribution described by this story.
+
+*** =instructions
+- Define a function with call signature `successive_poisson(tau1, tau2, size=1)` that samples the waiting time for a no-hitter and a hit of the cycle.
+    * Draw waiting times for the no-hitter out of an exponential distribution. Draw `size` samples.
+    * Draw waiting times for hitting the cycle out of an exponential distribution. Draw `size` samples.
+    * Return the sum of the waiting times for the two events.
+
+*** =hint
+hint comes here
+
+*** =pre_exercise_code
+```{python}
+import numpy as np
+np.random.seed(42)
+```
+
+*** =sample_code
+```{python}
+x = np.random.rand(1000)
+```
+
+*** =solution
+```{python}
+x = np.random.rand(1000)
+```
+
+*** =sct
+```{python}
+
+test_object("x")
+
+success_msg("Great work! We'll put the function to use in the next exercise.")
+```
