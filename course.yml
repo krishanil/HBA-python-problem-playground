@@ -1,8 +1,12 @@
-title                : HBA python problem playground
-instructors          :
- - hugo@datacamp.com
-description          : This is a place to play and muck around -- it's HBA's problem playground!!
-university           : DataCamp
-difficulty_level     : 2
-time_needed          : 1 hour
-programming_language : python
+title: Bayesian Thinking with Python
+description: >-
+  Bayesian Thinking and Inference are growing in popularity as methods for
+  dealing with data and statistics, particularly in the task of modeling
+  uncertainty in models that you build. In this course, we'll demistify Bayesian
+  Thinking by providing a hands-on, Python-based practical approach using hacker
+  statistics. You'll learn or re-learn about probability theory in this context,
+  Bayes' Theorem and see how Bayesian Thinking can be effective when modeling
+  real-world phenomena, such as the orbital parameters of planets! You'll also
+  come out well-versed in the differences between Bayesian and Frequentist
+  thinking and know when each approach is appropriate.
+programming_language: python
