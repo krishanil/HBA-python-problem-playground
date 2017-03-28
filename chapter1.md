@@ -1,6 +1,6 @@
 ---
 title: A probabilistic introduction
-description: 'This chapter will *probably* be awesome: what does this mean?'
+description: 'This chapter will *probably* be awesome!
 
 --- type:VideoExercise lang:python xp:50 skills:2 key:931db27cf9
 ## Flippin' coins and rollin' dice
@@ -230,7 +230,7 @@ Content
 ```
 
 --- type:NormalExercise lang:python xp:100 skills:2 key:ebd1641b1b
-## Wis the probability that a man and his biological son are both over six feet tall?
+## What the probability that a man and his biological son are both over six feet tall?
 
 Content
 
