@@ -230,7 +230,7 @@ Content
 ```
 
 --- type:NormalExercise lang:python xp:100 skills:2 key:ebd1641b1b
-## What the probability that a man and his biological son are both over six feet tall?
+## What is the probability that a man and his biological son are both over six feet tall?
 
 Content
 
