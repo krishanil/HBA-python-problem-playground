@@ -1,6 +1,6 @@
 ---
 title: A probabilistic introduction
-description: 'This chapter will *probably* be awesome.
+description: 'This chapter will *probably* be awesome.'
 
 --- type:VideoExercise lang:python xp:50 skills:2 key:931db27cf9
 ## Flippin' coins and rollin' dice
